@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.github.zanini</groupId>
+  <artifactId>swagger-codegen-poc</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <properties>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+
+    <version.openapi.generator>5.0.0</version.openapi.generator>
+    <version.javax.annotation.api>1.3.2</version.javax.annotation.api>
+
+    <swagger-annotations-version>1.5.8</swagger-annotations-version>
+    <vertx-version>3.4.2</vertx-version>
+    <jackson-version>2.12.1</jackson-version>
+    <jackson-databind-nullable-version>0.2.0</jackson-databind-nullable-version>
+    <maven-plugin-version>1.0.0</maven-plugin-version>
+    <scribejava-apis-version>6.9.0</scribejava-apis-version>
+  </properties>
+
+  <!-- See: https://github.com/OpenAPITools/openapi-generator/issues/5800
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openapitools</groupId>
+        <artifactId>openapi-generator-maven-plugin</artifactId>
+        <version>${version.openapi.generator}</version>
+        <executions>
+          <execution>
+            <id>default</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <inputSpec>${project.basedir}/src/main/resources/petstore.yaml</inputSpec>
+
+              <generatorName>java</generatorName>
+              <library>vertx</library>
+
+              <configOptions>
+                <dateLibrary>java8</dateLibrary>
+              </configOptions>
+
+              <apiPackage>${project.groupId}.client</apiPackage>
+              <modelPackage>${project.groupId}.client</modelPackage>
+              <invokerPackage>${project.groupId}.client</invokerPackage>
+              <generateApiTests>false</generateApiTests>
+              <generateModelTests>false</generateModelTests>
+              <generateModelDocumentation>false</generateModelDocumentation>
+              <generateApiDocumentation>false</generateApiDocumentation>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+-->
+
+  <dependencies>
+    <dependency>
+      <groupId>org.openapitools</groupId>
+      <artifactId>openapi-generator</artifactId>
+      <version>${version.openapi.generator}</version>
+    </dependency>
+
+
+    <!-- dependencies are needed for the client being generated
+    <dependency>
+      <groupId>io.swagger</groupId>
+      <artifactId>swagger-annotations</artifactId>
+      <version>${swagger-annotations-version}</version>
+    </dependency>
+    -->
+
+    <!-- You can find the dependencies for the library configuration you chose by looking in JavaClientCodegen.
+         Then find the corresponding dependency on Maven Central, and set the versions in the property section below -->
+
+    <!-- Vertx  -->
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-rx-java</artifactId>
+      <version>${vertx-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-web-client</artifactId>
+      <version>${vertx-version}</version>
+    </dependency>
+
+
+    <!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
+    <dependency>
+      <groupId>javax.annotation</groupId>
+      <artifactId>javax.annotation-api</artifactId>
+      <version>${version.javax.annotation.api}</version>
+    </dependency>
+
+
+    <!-- @Nullable annotation
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
+      <version>3.0.2</version>
+    </dependency>
+    -->
+
+    <!-- JSON processing: jackson
+    <dependency>
+      <groupId>com.fasterxml.jackson.jaxrs</groupId>
+      <artifactId>jackson-jaxrs-base</artifactId>
+      <version>${jackson-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>${jackson-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+      <version>${jackson-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${jackson-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.jaxrs</groupId>
+      <artifactId>jackson-jaxrs-json-provider</artifactId>
+      <version>${jackson-version}</version>
+    </dependency>
+    -->
+    <dependency>
+      <groupId>org.openapitools</groupId>
+      <artifactId>jackson-databind-nullable</artifactId>
+      <version>${jackson-databind-nullable-version}</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310
+    <dependency>
+      <groupId>com.fasterxml.jackson.datatype</groupId>
+      <artifactId>jackson-datatype-jsr310</artifactId>
+      <version>${jackson-version}</version>
+    </dependency>-->
+
+    <!-- Base64 encoding that works in both JVM and Android
+    <dependency>
+      <groupId>com.brsanthu</groupId>
+      <artifactId>migbase64</artifactId>
+      <version>2.2</version>
+    </dependency>
+    -->
+  </dependencies>
+</project>

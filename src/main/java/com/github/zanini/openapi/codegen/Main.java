@@ -1,4 +1,4 @@
-package com.github.zanini.openapi.codegen.quarkus;
+package com.github.zanini.openapi.codegen;
 
 import java.io.File;
 import java.io.IOException;
